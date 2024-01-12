@@ -39,7 +39,7 @@ public class PackageSpawner : MonoBehaviour
                 increment = 2;
                 break;
         }
-        timeText.text = timeRemaining.ToString("0.00") + "XXX" + difficulty;
+        timeText.text = timeRemaining.ToString("0.00");
     }
     public static Vector3 RandomInTriangle(Vector3 v1, Vector3 v2)
     {
