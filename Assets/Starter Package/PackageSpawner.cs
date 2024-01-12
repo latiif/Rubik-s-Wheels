@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 
 public class PackageSpawner : MonoBehaviour
@@ -113,6 +114,17 @@ public class PackageSpawner : MonoBehaviour
             {
                 timerIsRunning = false;
                 Debug.Log("Time is up");
+                int currentScore = score;
+                int highestScore = PlayerPrefs.GetInt("high-score", 0);
+
+                if (currentScore > highestScore)
+                {
+                    highestScore = currentScore;
+                }
+
+                PlayerPrefs.SetInt("score", currentScore);
+                PlayerPrefs.SetInt("high-score", highestScore);
+                SceneManager.LoadScene(3);
             }
         }
     }
