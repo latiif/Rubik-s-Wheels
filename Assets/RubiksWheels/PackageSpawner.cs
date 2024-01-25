@@ -16,11 +16,9 @@ public class PackageSpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI timeText;
 
-    public float timeRemaining = 15;
     public float increment = 5;
     public bool timerIsRunning = false;
 
-    private int score = 0;
     private void Start()
     {
         int difficulty = PlayerPrefs.GetInt("difficulty");
@@ -28,19 +26,19 @@ public class PackageSpawner : MonoBehaviour
         switch (difficulty)
         {
             case 0:
-                timeRemaining = 15;
+                DrivingSurfaceManager.TimeRemaining = 15;
                 increment = 5;
                 break;
             case 1:
-                timeRemaining = 10;
+                DrivingSurfaceManager.TimeRemaining = 10;
                 increment = 4;
                 break;
             case 2:
-                timeRemaining = 5;
+                DrivingSurfaceManager.TimeRemaining = 5;
                 increment = 2;
                 break;
         }
-        timeText.text = timeRemaining.ToString("0.00");
+        timeText.text = DrivingSurfaceManager.TimeRemaining.ToString("0.00");
     }
     public static Vector3 RandomInTriangle(Vector3 v1, Vector3 v2)
     {
@@ -105,16 +103,16 @@ public class PackageSpawner : MonoBehaviour
         }
         if (timerIsRunning)
         {
-            if (timeRemaining > 0)
+            if (DrivingSurfaceManager.TimeRemaining > 0)
             {
-                timeRemaining -= Time.deltaTime;
+                DrivingSurfaceManager.TimeRemaining -= Time.deltaTime;
                 updateTime();
             }
             else
             {
                 timerIsRunning = false;
                 Debug.Log("Time is up");
-                int currentScore = score;
+                int currentScore = DrivingSurfaceManager.Score;
                 int highestScore = PlayerPrefs.GetInt("high-score", 0);
 
                 if (currentScore > highestScore)
@@ -133,8 +131,8 @@ public class PackageSpawner : MonoBehaviour
     {
         if (timerIsRunning)
         {
-            scoreText.text = "Score: " + ++score;
-            timeRemaining += increment;
+            scoreText.text = "Score: " + ++DrivingSurfaceManager.Score;
+            DrivingSurfaceManager.TimeRemaining += increment;
         }
     }
 
@@ -142,7 +140,7 @@ public class PackageSpawner : MonoBehaviour
     {
         if (timerIsRunning)
         {
-            timeText.text = "" + timeRemaining.ToString("0.00") + "s";
+            timeText.text = "" + DrivingSurfaceManager.TimeRemaining.ToString("0.00") + "s";
         }
     }
 }

@@ -801,7 +801,6 @@ MonoBehaviour:
     type: 3}
   scoreText: {fileID: 880577749}
   timeText: {fileID: 1375737370}
-  timeRemaining: 5
   increment: 2
   timerIsRunning: 0
 --- !u!4 &1454467116
@@ -1318,6 +1317,8 @@ GameObject:
   - component: {fileID: 1964602100}
   - component: {fileID: 1964602099}
   - component: {fileID: 1964602098}
+  - component: {fileID: 1964602104}
+  - component: {fileID: 1964602103}
   m_Layer: 0
   m_Name: Driving Surface Manager
   m_TagString: Untagged
@@ -1340,6 +1341,8 @@ MonoBehaviour:
   PlaneManager: {fileID: 1964602100}
   RaycastManager: {fileID: 1964602099}
   LockedPlane: {fileID: 0}
+  Score: 0
+  TimeRemaining: 0
 --- !u!114 &1964602099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,6 +1403,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1964602103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba74c7c7a54fb80a89e51ceeeaca4c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drivingSurfaceManager: {fileID: 1964602098}
+--- !u!114 &1964602104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab0e80cee9cc1d44928bfe488dd1e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PointCloudPrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

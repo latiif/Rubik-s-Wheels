@@ -29,6 +29,12 @@ public class CarBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("mystery-box"))
+        {
+            Debug.Log("Bumped into a mystery box");
+            //TODO depending on the mysteryobject do stuff
+            Destroy(other.gameObject);
+        }
         var Package = other.GetComponent<PackageBehaviour>();
         if (Package != null)
         {

@@ -9,6 +9,9 @@ public class DrivingSurfaceManager : MonoBehaviour
     public ARRaycastManager RaycastManager;
     public ARPlane LockedPlane;
 
+    public int Score;
+    public float TimeRemaining;
+
     public void LockPlane(ARPlane keepPlane)
     {
         // Disable all planes except the one we want to keep
