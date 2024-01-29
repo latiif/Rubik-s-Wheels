@@ -8,6 +8,7 @@ public class CarBehaviour : MonoBehaviour
     public ReticleBehaviour Reticle;
     public float Speed = 1.2f;
 
+    public DrivingSurfaceManager drivingSurfaceManager;
 
     private void Start()
     {
@@ -34,6 +35,8 @@ public class CarBehaviour : MonoBehaviour
             Debug.Log("Bumped into a mystery box");
             //TODO depending on the mysteryobject do stuff
             Destroy(other.gameObject);
+            drivingSurfaceManager.Score *= 2;
+            return;
         }
         var Package = other.GetComponent<PackageBehaviour>();
         if (Package != null)

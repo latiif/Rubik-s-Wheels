@@ -19,6 +19,7 @@ public class CarManager : MonoBehaviour
             var obj = GameObject.Instantiate(CarPrefab);
             Car = obj.GetComponent<CarBehaviour>();
             Car.Reticle = Reticle;
+            Car.drivingSurfaceManager = DrivingSurfaceManager;
             Car.transform.position = Reticle.transform.position;
             DrivingSurfaceManager.LockPlane(Reticle.CurrentPlane);
         }

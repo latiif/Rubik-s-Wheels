@@ -9,7 +9,8 @@ public class PointCloudSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     ARPointCloudManager pointCloudTracker;
-    private GameObject myPrimitive;
+    public GameObject mysteryBoxPrefab;
+    private GameObject spawnedBox = null;
 
     public DrivingSurfaceManager drivingSurfaceManager;
 
@@ -19,7 +20,6 @@ public class PointCloudSpawner : MonoBehaviour
     void Awake()
     {
         pointCloudTracker = GetComponent<ARPointCloudManager>();
-        myPrimitive = null;
     }
 
     void OnEnable()
@@ -83,19 +83,25 @@ public class PointCloudSpawner : MonoBehaviour
 
         for (int i = 0; i < points.Count; i++)
         {
-            if (!myPrimitive)
+            if (!spawnedBox)
             {
                 if (confidences[i] == highestConfidence)
                 {
-                    gameObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    gameObject = GameObject.Instantiate(mysteryBoxPrefab);
                     gameObject.tag = "mystery-box";
                     gameObject.transform.position = points[i];
                     gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                    myPrimitive = gameObject;
+                    spawnedBox = gameObject;
                     //confidences[i] = 0; // So that it doesnt get picked again
-                    Object.Destroy(gameObject, AutoDestroyTimeout);
+                    Invoke(nameof(DestroyGameObject), AutoDestroyTimeout);
                 }
             }
         }
+    }
+
+    void DestroyGameObject()
+    {
+        Destroy(spawnedBox);
+        spawnedBox = null;
     }
 }
