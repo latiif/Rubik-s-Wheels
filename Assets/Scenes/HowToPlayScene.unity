@@ -491,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.5625, y: -291.06}
+  m_AnchoredPosition: {x: 9.5624, y: -400}
   m_SizeDelta: {x: 950.82, y: 122.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406062616
@@ -1040,10 +1040,10 @@ MonoBehaviour:
   m_text: "Welcome to Rubik's Wheels!\nThis an Augmented Reality Game where the objective
     is to collect as many pieces of a Rubik's Cube until the timer runs out. \n\nYou
     move the cube by moving your camera around your physical environment in order
-    to collect the cube pieces. Each cube picked up also extends the timer, the amount
-    of time given depends on the difficulty:\n\nNote that you have unlimited time
-    to detect planes around your area, you start the game once you click the screen
-    once to spawn your cube.\n"
+    to collect the cube pieces along with collecting or avoiding the different mystery
+    boxes. Each cube picked up also extends the timer, the amount of time given depends
+    on the difficulty.\n\nNote that you have unlimited time to detect planes around
+    your area, you start the game once you click the screen once to spawn your cube.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -153.2001}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -7,6 +7,10 @@ TagManager:
   - ScoreText
   - mystery-box
   - mb-double-time
+  - mb-halve-time
+  - mb-double-score
+  - mb-halve-score
+  - mb-speed-boost
   layers:
   - Default
   - TransparentFX
