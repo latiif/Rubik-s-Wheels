@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3668035867037592907}
   - component: {fileID: 1214574189776285791}
   m_Layer: 0
-  m_Name: MysteryBox
+  m_Name: mb-double-time
   m_TagString: mb-double-time
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
