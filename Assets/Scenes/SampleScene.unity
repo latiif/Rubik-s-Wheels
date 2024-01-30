@@ -1415,7 +1415,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba74c7c7a54fb80a89e51ceeeaca4c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mysteryBoxPrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+  doubleScorePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+    type: 3}
+  halveScorePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+    type: 3}
+  doubleTimePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+    type: 3}
+  halveTimePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+    type: 3}
+  speedBoostPrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
     type: 3}
   drivingSurfaceManager: {fileID: 1964602098}
 --- !u!114 &1964602104

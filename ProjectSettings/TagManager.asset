@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScoreText
   - mystery-box
+  - mb-double-time
   layers:
   - Default
   - TransparentFX

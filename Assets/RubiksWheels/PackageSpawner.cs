@@ -141,6 +141,7 @@ public class PackageSpawner : MonoBehaviour
         if (timerIsRunning)
         {
             timeText.text = "" + DrivingSurfaceManager.TimeRemaining.ToString("0.00") + "s";
+            scoreText.text = "Score: " + DrivingSurfaceManager.Score;
         }
     }
 }

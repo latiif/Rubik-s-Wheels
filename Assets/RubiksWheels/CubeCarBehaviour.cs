@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -10,8 +12,20 @@ public class CarBehaviour : MonoBehaviour
 
     public DrivingSurfaceManager drivingSurfaceManager;
 
+    private bool hasCollided = false;
+
+    private Dictionary<string, string> mysteryBoxHandler;
+
     private void Start()
     {
+        mysteryBoxHandler = new Dictionary<string, string>()
+        {
+            {"mb-double-score",nameof(handleDoubleScore)},
+            {"mb-halve-score",nameof(handleHalveScore)},
+            {"mb-double-time",nameof(handleDoubleTime)},
+            {"mb-halve-time",nameof(handleHalveTime)},
+            {"mb-speed-boost",nameof(handleSpeedBoost)}
+        };
     }
     private void Update()
     {
@@ -30,12 +44,18 @@ public class CarBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("mystery-box"))
+
+        if (other.gameObject.tag != "Untagged")
         {
-            Debug.Log("Bumped into a mystery box");
-            //TODO depending on the mysteryobject do stuff
+            Debug.Log("MB collision with " + other.gameObject.tag);
+        }
+        if (!hasCollided && mysteryBoxHandler.Keys.Contains(other.gameObject.tag))
+        {
+            hasCollided = true;
+            Invoke(nameof(enableCollectingMysteryBox), 2f);
+            Debug.Log("MB Bumped into a mystery box:" + other.gameObject.tag);
+            Invoke(mysteryBoxHandler[other.gameObject.tag], 0f);
             Destroy(other.gameObject);
-            drivingSurfaceManager.Score *= 2;
             return;
         }
         var Package = other.GetComponent<PackageBehaviour>();
@@ -43,6 +63,34 @@ public class CarBehaviour : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+
+    private void enableCollectingMysteryBox()
+    {
+        hasCollided = false;
+    }
+
+    private void handleDoubleScore()
+    {
+        drivingSurfaceManager.Score *= 2;
+    }
+    private void handleDoubleTime()
+    {
+        drivingSurfaceManager.TimeRemaining *= 2;
+    }
+
+    private void handleHalveScore()
+    {
+        drivingSurfaceManager.Score /= 2;
+    }
+    private void handleHalveTime()
+    {
+        drivingSurfaceManager.TimeRemaining /= 2;
+    }
+
+    private void handleSpeedBoost()
+    {
+        //TODO
     }
 
 

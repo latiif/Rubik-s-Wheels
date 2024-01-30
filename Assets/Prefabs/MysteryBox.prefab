@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 1214574189776285791}
   m_Layer: 0
   m_Name: MysteryBox
-  m_TagString: mystery-box
+  m_TagString: mb-double-time
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 4570489778798671716}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 0, y: 0, z: 0.282}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
