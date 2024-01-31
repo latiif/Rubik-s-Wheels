@@ -1412,18 +1412,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1964602097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba74c7c7a54fb80a89e51ceeeaca4c0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec3b97eb0ecc1047abf88e217917366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleScorePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+  doubleScorePrefab: {fileID: 4570489778798671716, guid: baa770c6650444147aa1ac311e2ddd01,
     type: 3}
-  halveScorePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+  halveScorePrefab: {fileID: 4570489778798671716, guid: de22ebb4596215544bdb7ccfd7168304,
     type: 3}
-  doubleTimePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+  doubleTimePrefab: {fileID: 4570489778798671716, guid: 655b8f9c10910c141bff16479f9587cd,
     type: 3}
-  halveTimePrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+  halveTimePrefab: {fileID: 4570489778798671716, guid: 2029f4df7cca90145a2b62af05d20e6e,
     type: 3}
-  speedBoostPrefab: {fileID: 4570489778798671716, guid: 02346b695e5ecb09bacb2848062de9ba,
+  speedBoostPrefab: {fileID: 4570489778798671716, guid: 79403d5d8650157409286c33f103bf60,
     type: 3}
   drivingSurfaceManager: {fileID: 1964602098}
 --- !u!114 &1964602104

@@ -20,8 +20,8 @@ public class PointCloudSpawner : MonoBehaviour
 
     public DrivingSurfaceManager drivingSurfaceManager;
 
-    private const float SpawnInterval = 5f;
-    private const float AutoDestroyTimeout = 3f;
+    private const float SpawnInterval = 4f;
+    private const float AutoDestroyTimeout = 9f;
     private float countdown = SpawnInterval;
     private Dictionary<string, GameObject> tag2prefabDict;
     private System.Random rng;
@@ -101,6 +101,7 @@ public class PointCloudSpawner : MonoBehaviour
         Debug.Log("MB Highest confidence is: " + highestConfidence);
         Debug.Log("MB points found: " + points.Count);
 
+        if (drivingSurfaceManager.LockedPlane == null) return; // No point spawning if no plane is detected yet
         for (int i = 0; i < points.Count; i++)
         {
             if (!spawnedBox)
@@ -117,9 +118,9 @@ public class PointCloudSpawner : MonoBehaviour
                     Debug.Log("MB Spawned box - " + tag + " | " + gameObject.tag + " | " + gameObject.gameObject.tag);
                     //gameObject.transform.position = points[i];
                     Vector3 boxPos = Vector3.ProjectOnPlane(points[i], drivingSurfaceManager.LockedPlane.infinitePlane.normal);
-                    boxPos.y = drivingSurfaceManager.LockedPlane.center.y + 0.1f;
+                    boxPos.y = drivingSurfaceManager.LockedPlane.center.y + 0.15f;
                     gameObject.transform.position = boxPos;
-                    gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                    gameObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                     spawnedBox = gameObject;
                     Invoke(nameof(DestroyGameObject), AutoDestroyTimeout);
                 }
