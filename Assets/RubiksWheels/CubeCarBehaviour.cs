@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class CarBehaviour : MonoBehaviour
 {
     public ReticleBehaviour Reticle;
-    public float Speed = 1.2f;
-
+    private const float originalSpeed = 1.2f;
+    private const float speedBoostDuration = 5f;
+    public float Speed = originalSpeed;
     public DrivingSurfaceManager drivingSurfaceManager;
 
     private bool hasCollided = false;
@@ -90,7 +89,13 @@ public class CarBehaviour : MonoBehaviour
 
     private void handleSpeedBoost()
     {
-        //TODO
+        Speed *= 1.25f; // an increment of 25%
+        Invoke(nameof(resetSpeed), speedBoostDuration); // Reset speed to normal after 'speedBoostDuration' seconds
+    }
+
+    private void resetSpeed()
+    {
+        Speed = originalSpeed;
     }
 
 
